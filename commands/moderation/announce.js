@@ -11,6 +11,12 @@ module.exports = {
             message.delete();
         }
 
+        if (!message.member.permissions.has(Permissions.FLAGS.BAN_MEMBERS)) {
+            return message.reply("You do not have permissions to run this command.").then(msg => {
+                setTimeout(() => msg.delete, 3500)
+            });
+        }
+
         if(!args[0]) {
             return;
         }
