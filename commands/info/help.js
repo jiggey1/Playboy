@@ -30,7 +30,8 @@ module.exports = {
                 .setAuthor(`Playboy`, `${global.botPFP}`)
                 .setTitle("Information Commands")
                 .addFields(
-                    { name: ".info", value: "Displays information about the bot!", inline: true }
+                    { name: "``.info``", value: "Displays information about the bot!" },
+                    { name: "``.report``", value: "This will report the mentioned user for the reason specified." }
                 )
                 .setTimestamp()
                 .setFooter(`Playboy ${global.botVersion}`)
@@ -52,18 +53,19 @@ module.exports = {
 
             } else if(args[0] == "moderation") {
 
-                const funEmbed = new MessageEmbed()
+                const modEmbed = new MessageEmbed()
                 .setAuthor(`Playboy`, `${global.botPFP}`)
                 .setTitle("Moderation Commands")
                 .addFields(
                     { name: "``.announce [announcement]``", value: "This announces a message to the server by pinging everyone." },
                     { name: "``.ban <@Member> [Reason]``", value: "This bans the mentioned user for the reason if specified." },
+                    { name: "``.janitor <1-100>``", value: "This will nuke the number of messages specified." },
                     { name: "``.kick <@Member> [Reason]``", value: "This kicks the mentioned user for the reason if specified."  }
                 )
                 .setTimestamp()
                 .setFooter(`Playboy ${global.botVersion}`)
 
-                return message.channel.send({ embeds: [funEmbed] })
+                return message.channel.send({ embeds: [modEmbed] })
 
             } else {
 
