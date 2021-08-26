@@ -1,4 +1,4 @@
-const { MessageEmbed, MessageFlags } = require("discord.js")
+const { MessageEmbed, MessageFlags, Permissions } = require("discord.js")
 
 module.exports = {
     name: "announce",
