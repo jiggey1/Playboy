@@ -45,35 +45,43 @@ module.exports = {
         const role = message.guild.roles.cache.find(r => r.name === "Muted");
 
         if(!args[1]) {
-            const succEmbed = new MessageEmbed()
-            .setAuthor(`Playboy`, `${global.botPFP}`)
-            .setTitle(message.mentions.users.first().username + " Is Now Muted" )
-            .setColor("GREEN")
-            .addFields(
-                { name: "User Muted", value: `${mentionedUser}` },
-                { name: "Muted By", value: `${message.author}` },
-                { name: "Reason", value: "No Reason Specified." }
-            )
-            .setFooter("User Has Been Muted!")
-            .setTimestamp()
+            try {
+                const succEmbed = new MessageEmbed()
+                .setAuthor(`Playboy`, `${global.botPFP}`)
+                .setTitle(message.mentions.users.first().username + " Is Now Muted" )
+                .setColor("GREEN")
+                .addFields(
+                    { name: "User Muted", value: `${mentionedUser}` },
+                    { name: "Muted By", value: `${message.author}` },
+                    { name: "Reason", value: "No Reason Specified." }
+                )
+                .setFooter("User Has Been Muted!")
+                .setTimestamp()
 
-            mentionedUser.roles.add(role);
-            return message.channel.send({ embeds: [succEmbed] });
+                mentionedUser.roles.add(role);
+                return message.channel.send({ embeds: [succEmbed] });
+            }catch(e) {
+                return errorMessage("Something went horribly wrong, and I cannot proceed with the muting command. Make sure the \"Muted\" role exists.")
+            }
         } else {
-            const succEmbed2 = new MessageEmbed()
-            .setAuthor(`Playboy`, `${global.botPFP}`)
-            .setTitle(message.mentions.users.first().username + " Is Now Muted")
-            .setColor("GREEN")
-            .addFields(
-                { name: "User Muted", value: `${mentionedUser}` },
-                { name: "Muted By", value: `${message.author}` },
-                { name: `Reason`, value: `${reason}` }
-            )
-            .setFooter("User Has Been Muted!")
-            .setTimestamp()
-
-            mentionedUser.roles.add(role);
-            return message.channel.send({ embeds: [succEmbed2] });
+            try {
+                const succEmbed2 = new MessageEmbed()
+                .setAuthor(`Playboy`, `${global.botPFP}`)
+                .setTitle(message.mentions.users.first().username + " Is Now Muted")
+                .setColor("GREEN")
+                .addFields(
+                    { name: "User Muted", value: `${mentionedUser}` },
+                    { name: "Muted By", value: `${message.author}` },
+                    { name: `Reason`, value: `${reason}` }
+                )
+                .setFooter("User Has Been Muted!")
+                .setTimestamp()
+                
+                mentionedUser.roles.add(role);
+                return message.channel.send({ embeds: [succEmbed2] });
+            }catch(e) {
+                return errorMessage("Something went horribly wrong, and I cannot proceed with the muting command. Make sure the \"Muted\" role exists.")
+            }
         }
     
     }
