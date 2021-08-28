@@ -31,7 +31,9 @@ module.exports = {
                 .setTitle("Information Commands")
                 .addFields(
                     { name: "``.info``", value: "Displays information about the bot!" },
-                    { name: "``.report``", value: "This will report the mentioned user for the reason specified." }
+                    { name: "``.report``", value: "This will report the mentioned user for the reason specified." },
+                    { name: "``.userinfo [@Member]``", value: "Displays information about yourself or another user if mentioned." },
+                    { name: "``.serverinfo``", value: "Displays information about the current guild." }
                 )
                 .setTimestamp()
                 .setFooter(`Playboy ${global.botVersion}`)
