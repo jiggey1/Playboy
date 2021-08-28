@@ -36,15 +36,18 @@ module.exports = {
             return errorMessage("Please mention a user. Correct Usage: ``.mute <@user> [Reason]``");
         }
 
+        if(mentionedUser.id == message.author.id) {
+            return errorMessage("You cannot mute yourself.");
+        }
+
         const reason = args.slice(1).join(" ");
 
         const role = message.guild.roles.cache.find(r => r.name === "Muted");
 
-        try {
         if(!args[1]) {
             const succEmbed = new MessageEmbed()
             .setAuthor(`Playboy`, `${global.botPFP}`)
-            .setTitle("Successfully Muted " + mentionedUser.username)
+            .setTitle(message.mentions.users.first().username + " Is Now Muted" )
             .setColor("GREEN")
             .addFields(
                 { name: "User Muted", value: `${mentionedUser}` },
@@ -59,7 +62,7 @@ module.exports = {
         } else {
             const succEmbed2 = new MessageEmbed()
             .setAuthor(`Playboy`, `${global.botPFP}`)
-            .setTitle("Successfully Muted " + mentionedUser.username)
+            .setTitle(message.mentions.users.first().username + " Is Now Muted")
             .setColor("GREEN")
             .addFields(
                 { name: "User Muted", value: `${mentionedUser}` },
@@ -71,10 +74,6 @@ module.exports = {
 
             mentionedUser.roles.add(role);
             return message.channel.send({ embeds: [succEmbed2] });
-        }
-        }catch(e) {
-            console.log(e);
-            return;
         }
     
     }
