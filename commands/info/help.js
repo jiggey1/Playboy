@@ -58,9 +58,11 @@ module.exports = {
                 .setTitle("Moderation Commands")
                 .addFields(
                     { name: "``.announce [announcement]``", value: "This announces a message to the server by pinging everyone." },
-                    { name: "``.ban <@Member> [Reason]``", value: "This bans the mentioned user for the reason if specified." },
+                    { name: "``.ban <@Member> [Reason]``", value: "This bans the mentioned user for the reason, if specified." },
+                    { name: "``.kick <@Member> [Reason]``", value: "This kicks the mentioned user for the reason, if specified."  },
                     { name: "``.janitor <1-100>``", value: "This will nuke the number of messages specified." },
-                    { name: "``.kick <@Member> [Reason]``", value: "This kicks the mentioned user for the reason if specified."  }
+                    { name: "``.mute <@Member> [Reason]``", value: "This will give the muted role to the user for the reason, if specified." },
+                    { name: "``.unmute <@Member>``", value: "This will remove the muted role." }
                 )
                 .setTimestamp()
                 .setFooter(`Playboy ${global.botVersion}`)

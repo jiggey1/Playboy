@@ -17,6 +17,8 @@ module.exports = {
 
             return message.channel.send({ embeds: [errorEmbed] });
         }
+
+        // I wil be further implementing databases into this command at a later base.
     
         if(!message.member.permissions.has(Permissions.FLAGS.MANAGE_MEMBERS)) {
             if(message.deletable) {

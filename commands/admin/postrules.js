@@ -10,6 +10,8 @@ module.exports = {
             message.delete()
         }
     
+        // I wil be further implementing databases into this command at a later base.
+
         if(message.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR)) {
             
             message.channel.messages.fetch("879159959898714112").then( msg => msg.react('✅') );

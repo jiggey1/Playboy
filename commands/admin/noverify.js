@@ -9,6 +9,8 @@ module.exports = {
         if(message.deletable) {
             message.delete()
         }
+
+        // I wil be further implementing databases into this command at a later base.
     
         if(message.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR)) {
         

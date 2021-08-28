@@ -21,6 +21,8 @@ module.exports = {
             });
         }
 
+        // I wil be further implementing databases into this command at a later base.
+
         const mentionedUser = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
  
         if(message.deletable) {
