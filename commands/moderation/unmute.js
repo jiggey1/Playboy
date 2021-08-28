@@ -36,9 +36,11 @@ module.exports = {
             return errorMessage("Please mention a user. Correct Usage: ``.unmute <@user>``");
         }
 
-        const reason = args.slice(1).join(" ");
-
         const role = message.guild.roles.cache.find(r => r.name === "Muted");
+
+        if(!message.member.roles.cache.has(role)) {
+            return errorMessage("User is not muted.");
+        }
 
         try {
             const succEmbed2 = new MessageEmbed()

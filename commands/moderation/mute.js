@@ -44,6 +44,10 @@ module.exports = {
 
         const role = message.guild.roles.cache.find(r => r.name === "Muted");
 
+        if(message.member.roles.cache.has(role)) {
+            return errorMessage("User is already muted.");
+        }
+
         if(!args[1]) {
             try {
                 const succEmbed = new MessageEmbed()
