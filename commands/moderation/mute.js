@@ -46,6 +46,10 @@ module.exports = {
 
         const role = message.guild.roles.cache.find(r => r.name === "Muted");
 
+        if(!role) {
+            return errorMessage("There is no Muted role. Please create one and try again.")
+        }
+
         if(message.member.roles.cache.has(role)) {
             return errorMessage("User is already muted.");
         }
