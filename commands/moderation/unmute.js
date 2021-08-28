@@ -40,45 +40,23 @@ module.exports = {
 
         const role = message.guild.roles.cache.find(r => r.name === "Muted");
 
-        if(!args[1]) {
-            try {
-                const succEmbed = new MessageEmbed()
-                .setAuthor(`Playboy`, `${global.botPFP}`)
-                .setTitle(message.mentions.users.first().username + " Has Been Un-Muted")
-                .setColor("GREEN")
-                .addFields(
-                    { name: "User Un-Muted", value: `${mentionedUser}` },
-                    { name: "Un-Muted By", value: `${message.author}` },
-                    { name: "Reason", value: "No Reason Specified." }
-                )
-                .setFooter("User Has Been Un-Muted!")
-                .setTimestamp()
+        try {
+            const succEmbed2 = new MessageEmbed()
+            .setAuthor(`Playboy`, `${global.botPFP}`)
+            .setTitle(message.mentions.users.first().username + " Has Been Un-Muted")
+            .setColor("GREEN")
+            .addFields(
+                { name: "User Un-Muted", value: `${mentionedUser}` },
+                { name: "Un-Muted By", value: `${message.author}` }
+            )
+            .setFooter("User Has Been Un-Muted!")
+            .setTimestamp()
 
-                mentionedUser.roles.remove(role);
-                return message.channel.send({ embeds: [succEmbed] });
-            }catch(e) {
-                return errorMessage("Something went horribly wrong, and I cannot proceed with the muting command. Make sure the \"Muted\" role exists.")
-            }
-        } else {
-            try {
-                const succEmbed2 = new MessageEmbed()
-                .setAuthor(`Playboy`, `${global.botPFP}`)
-                .setTitle(message.mentions.users.first().username + " Has Been Un-Muted")
-                .setColor("GREEN")
-                .addFields(
-                    { name: "User Un-Muted", value: `${mentionedUser}` },
-                    { name: "Un-Muted By", value: `${message.author}` },
-                    { name: `Reason`, value: `${reason}` }
-                )
-                .setFooter("User Has Been Un-Muted!")
-                .setTimestamp()
-
-                mentionedUser.roles.remove(role);
-                return message.channel.send({ embeds: [succEmbed2] });
-            
-            }catch(e) {
-                return errorMessage("Something went horribly wrong, and I cannot proceed with the muting command. Make sure the \"Muted\" role exists.")
-            }
-        }    
+            mentionedUser.roles.remove(role);
+            return message.channel.send({ embeds: [succEmbed2] });
+        
+        }catch(e) {
+            return errorMessage("Something went horribly wrong, and I cannot proceed with the muting command. Make sure the \"Muted\" role exists.")
+        }
     }
 }
