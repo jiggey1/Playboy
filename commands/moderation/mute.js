@@ -38,6 +38,9 @@ module.exports = {
 
         const reason = args.slice(1).join(" ");
 
+        const role = message.guild.roles.cache.find(r => r.name === "Muted");
+
+        try {
         if(!args[1]) {
             const succEmbed = new MessageEmbed()
             .setAuthor(`Playboy`, `${global.botPFP}`)
@@ -51,6 +54,7 @@ module.exports = {
             .setFooter("User Has Been Muted!")
             .setTimestamp()
 
+            mentionedUser.roles.add(role);
             return message.channel.send({ embeds: [succEmbed] });
         } else {
             const succEmbed2 = new MessageEmbed()
@@ -65,7 +69,12 @@ module.exports = {
             .setFooter("User Has Been Muted!")
             .setTimestamp()
 
+            mentionedUser.roles.add(role);
             return message.channel.send({ embeds: [succEmbed2] });
+        }
+        }catch(e) {
+            console.log(e);
+            return;
         }
     
     }
