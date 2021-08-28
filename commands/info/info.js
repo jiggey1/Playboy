@@ -1,4 +1,5 @@
-const { MessageEmbed } = require("discord.js")
+const { MessageEmbed } = require("discord.js");
+const prettyMilliseconds = require('pretty-ms');
 
 module.exports = {
     name: "info",
@@ -15,7 +16,8 @@ module.exports = {
             { name: "Version", value: `${global.botVersion}`, inline: true },
             { name: "Developer", value: `${global.botDev}`, inline: true },
             { name: "Library", value: "Discord.JS", inline: true },
-            { name: "Website", value: "Soon:tm:", inline: true }
+            { name: "Website", value: "Soon:tm:", inline: true },
+            { name: "Playboy's Uptime", value: `${prettyMilliseconds(client.uptime)}` }
         )
 
         message.channel.send({ embeds: [infoEmbed] });
