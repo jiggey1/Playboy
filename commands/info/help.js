@@ -31,6 +31,7 @@ module.exports = {
                 .setTitle("Information Commands")
                 .addFields(
                     { name: "``.info``", value: "Displays information about the bot!" },
+                    { name: "``.invite``", value: "Sends an embed with my invitiation link!" },
                     { name: "``.report``", value: "This will report the mentioned user for the reason specified." },
                     { name: "``.userinfo [@Member]``", value: "Displays information about yourself or another user if mentioned." },
                     { name: "``.serverinfo``", value: "Displays information about the current guild." }
