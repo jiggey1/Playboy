@@ -8,7 +8,7 @@ module.exports = {
     run: async (client, message, args) => {
 
         if(message.deletable) {
-            message.delete();
+            setTimeout(() => message.delete(), 50);
         }
 
         if (!message.member.permissions.has(Permissions.FLAGS.MANAGE_MESSAGES)) {

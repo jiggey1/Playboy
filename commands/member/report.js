@@ -26,7 +26,7 @@ module.exports = {
         const mentionedUser = message.mentions.members.first() || message.guild.members.cache.get(args[0]);
  
         if(message.deletable) {
-            message.delete();
+            setTimeout(() => message.delete(), 1000);
         }
 
         try{

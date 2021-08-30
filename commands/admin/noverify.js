@@ -7,7 +7,7 @@ module.exports = {
     run: async (client, message, args) => {
 
         if(message.deletable) {
-            message.delete()
+            setTimeout(() => message.delete(), 50);
         }
 
         // I wil be further implementing databases into this command at a later base.

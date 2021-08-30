@@ -7,6 +7,10 @@ module.exports = {
     description: "Purge Command",
     run: async (client, message, args) => {
 
+        if(message.deletable) {
+            setTimeout(() => message.delete(), 50);
+        }
+
         function errorEmbed(errorMsg) {
             const errorEmbed = new MessageEmbed()
             .setAuthor("Playboy", `${global.botPFP}`)
