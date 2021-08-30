@@ -28,7 +28,7 @@ client.aliases = new Collection();
 
 client.on("ready", async (message) => {
   client.user.setStatus('dnd')
-  client.user.setPresence({ activities: [{ name: '.help' }] });
+  client.user.setPresence({ activities: [{ name: '.help | jiggey#4704' }] });
   console.log(`Playboy Bunny <3 | Now Online And Ready `);
 })
 

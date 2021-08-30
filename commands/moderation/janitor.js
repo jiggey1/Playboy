@@ -3,6 +3,7 @@ const { MessageEmbed, Permissions, MessageFlags } = require("discord.js")
 module.exports = {
     name: "janitor",
     category: "moderation",
+    aliases: ['nuke', 'purge', 'md', 'massdelete'],
     description: "Purge Command",
     run: async (client, message, args) => {
 
@@ -44,6 +45,8 @@ module.exports = {
         .setFooter("Command Executed!")
         .setTimestamp()
 
-        message.channel.send({ embeds: [successEmbed] });
+        message.channel.send({ embeds: [successEmbed] }).then(msg => {
+            setTimeout(() => msg.delete, 5000)
+        });
     }
 }
