@@ -27,6 +27,7 @@ module.exports = {
             .setAuthor("Playboy", `${global.botPFP}`)
             .setTitle(message.author.username + "'s user information.")
             .setColor("DARK_VIVID_PINK")
+            .setThumbnail(`${message.author.displayAvatarURL()}`)
             .addFields(
                 { name: "Profile", value: `${message.author}`, inline: true },
                 { name: "Discrim", value: `#${message.author.discriminator}`, inline: true },
@@ -40,6 +41,7 @@ module.exports = {
             .setAuthor("Playboy", `${global.botPFP}`)
             .setTitle(message.mentions.users.first().username + "'s user information.")
             .setColor("DARK_VIVID_PINK")
+            .setThumbnail(`${taggedUser.user.displayAvatarURL()}`)
             .addFields(
                 { name: "Profile", value: `${taggedUser}`, inline: true },
                 { name: "Discrim", value: `#${taggedUser.user.discriminator}`, inline: true },
