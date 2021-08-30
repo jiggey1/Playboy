@@ -4,7 +4,9 @@ module.exports = {
     description: "RELOAD COMMANDS COMMAND",
     run: async (client, message, args) => {
         
-    message.delete({timeout: 50})
+    if(message.deletable) {
+        setTimeout(() => message.delete(), 50)
+    }
 
     if (message.author.id !== '350692507199209494') {
          return message.channel.send("This command is only accessible to my owner, jiggey#4704. **__Please Don't Try To Use This. It's just embarrassing__**")

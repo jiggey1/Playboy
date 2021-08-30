@@ -9,7 +9,7 @@ module.exports = {
         function errorEmbed(errorMsg) {
             
             const errorEmbed = new MessageEmbed()
-            .setAuthor("Playboy", `${global.botPFP}`)
+            .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
             .setTitle("Sorry, I Ran Into An Error!")
             .setColor("NOT_QUITE_BLACK")
             .setDescription(errorMsg)
@@ -47,7 +47,7 @@ module.exports = {
         });
 
         const reportEmbed = new MessageEmbed()
-        .setAuthor("Playboy", `${global.botPFP}`)
+        .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
         .setTitle("Report from " + message.author.username)
         .setColor("YELLOW")
         .addFields(

@@ -13,7 +13,7 @@ module.exports = {
 
         function errorEmbed(errorMsg) {
             const errorEmbed = new MessageEmbed()
-            .setAuthor("Playboy", `${global.botPFP}`)
+            .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
             .setTitle("An Error Occurred!")
             .setColor("RED")
             .setDescription(errorMsg)
@@ -42,7 +42,7 @@ module.exports = {
         });
 
         const successEmbed = new MessageEmbed()
-        .setAuthor("Playboy", `${global.botPFP}`)
+        .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
         .setTitle(`Whew! I Deleted ${args[0]} messages!`)
         .setColor("NAVY")
         .setDescription("If some messages haven't been deleted, it could be because they are older than 14 days. Discord prevents me from deleting messages that far back. Sorry!")

@@ -7,7 +7,7 @@ module.exports = {
     
         function errorEmbed(errorMsg) {
             const errEmbed = new MessageEmbed()
-            .setAuthor("Playboy", `${global.botPFP}`)
+            .setAuthor("Playboy", `${global.botPFP}`, `${global.botInv}`)
             .setTitle("I Ran Into An Error!")
             .setColor("RED")
             .setDescription(errorMsg)

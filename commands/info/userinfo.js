@@ -10,7 +10,7 @@ module.exports = {
 
         function errorEmbed(errorMsg) {
             const errEmbed = new MessageEmbed()
-            .setAuthor("Playboy", `${global.botPFP}`)
+            .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
             .setTitle("I Ran Into An Error!")
             .setColor("RED")
             .setDescription(errorMsg)
@@ -24,7 +24,7 @@ module.exports = {
 
         if(!taggedUser) {
             const soloEmbed = new MessageEmbed()
-            .setAuthor("Playboy", `${global.botPFP}`)
+            .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
             .setTitle(message.author.username + "'s user information.")
             .setColor("DARK_VIVID_PINK")
             .setThumbnail(`${message.author.displayAvatarURL()}`)
@@ -38,7 +38,7 @@ module.exports = {
             message.channel.send({ embeds: [soloEmbed] });
         } else {
             const soloEmbed = new MessageEmbed()
-            .setAuthor("Playboy", `${global.botPFP}`)
+            .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
             .setTitle(message.mentions.users.first().username + "'s user information.")
             .setColor("DARK_VIVID_PINK")
             .setThumbnail(`${taggedUser.user.displayAvatarURL()}`)

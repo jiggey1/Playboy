@@ -11,7 +11,7 @@ module.exports = {
             if(args.length == 0) {
 
                 const helpEmbed = new MessageEmbed()
-                .setAuthor(`Playboy`, `${global.botPFP}`)
+                .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
                 .setColor("#101010")
                 .setTitle("Help Menu")
                 .addFields(
@@ -27,7 +27,7 @@ module.exports = {
             } else if(args[0] == "info") {
 
                 const infoEmbed = new MessageEmbed()
-                .setAuthor(`Playboy`, `${global.botPFP}`)
+                .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
                 .setTitle("Information Commands")
                 .addFields(
                     { name: "``.info``", value: "Displays information about the bot!" },
@@ -43,7 +43,7 @@ module.exports = {
             } else if(args[0] == "fun") {
 
                 const funEmbed = new MessageEmbed()
-                .setAuthor(`Playboy`, `${global.botPFP}`)
+                .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
                 .setTitle("Fun Commands")
                 .addFields(
                     { name: "Much Empty.", value: "Some commands will be coming soon...", inline: true }
@@ -56,7 +56,7 @@ module.exports = {
             } else if(args[0] == "moderation") {
 
                 const modEmbed = new MessageEmbed()
-                .setAuthor(`Playboy`, `${global.botPFP}`)
+                .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
                 .setTitle("Moderation Commands")
                 .addFields(
                     { name: "``.announce [announcement]``", value: "This announces a message to the server by pinging everyone." },

@@ -9,7 +9,7 @@ module.exports = {
         if(args.length < 1) {
 
             const syntaxEmbed = new MessageEmbed()
-            .setAuthor("Playboy", `${global.botPFP}`)
+            .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
             .setTitle("Syntax Error!")
             .setColor("RED")
             .setDescription("You have used the command incorrectly. Please use: \n``.ban <@member> [Reason]``")
@@ -28,7 +28,7 @@ module.exports = {
         if(!mentionedUser) {
 
             const errorEmbed1 = new MessageEmbed()
-            .setAuthor("Playboy", `${global.botPFP}`)
+            .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
             .setTitle("Couldn't Find That User!")
             .setColor("RED")
             .setDescription("I had an issue completing this command since I could not find that user in the server! Please make sure you are mentioning a valid user.")
@@ -63,7 +63,7 @@ module.exports = {
         try {
 
             const successEmbed1 = new MessageEmbed()
-            .setAuthor("Playboy", `${global.botPFP}`)
+            .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
             .setTitle(message.mentions.users.first().username + " has been banned!")
             .setColor("RED")
             .addFields(
@@ -88,7 +88,7 @@ module.exports = {
         try {
             
             const successEmbed2 = new MessageEmbed()
-            .setAuthor("Playboy", `${global.botPFP}`)
+            .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
             .setTitle(message.mentions.users.first().username + " has been banned!")
             .setColor("RED")
             .addFields(

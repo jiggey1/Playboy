@@ -8,7 +8,7 @@ module.exports = {
     run: async (client, message, args) => {
         
         const infoEmbed = new MessageEmbed()
-        .setAuthor("Playboy", `${global.botPFP}`)
+        .setAuthor("Playboy", `${global.botPFP}`, `${global.botInv}`)
         .setTitle("Playboy's Information")
         .setColor("LUMINOUS_VIVID_PINK")
         .addFields(

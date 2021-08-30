@@ -8,7 +8,7 @@ module.exports = {
 
         function errorMessage(errorMsg) {
             const errorEmbed = new MessageEmbed()
-            .setAuthor(`Playboy`, `${global.botPFP}`)
+            .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
             .setTitle("An Error Occurred!")
             .setColor("RED")
             .setDescription(errorMsg)
@@ -57,7 +57,7 @@ module.exports = {
         if(!args[1]) {
             try {
                 const succEmbed = new MessageEmbed()
-                .setAuthor(`Playboy`, `${global.botPFP}`)
+                .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
                 .setTitle(message.mentions.users.first().username + " Is Now Muted" )
                 .setColor("GREEN")
                 .addFields(
@@ -76,7 +76,7 @@ module.exports = {
         } else {
             try {
                 const succEmbed2 = new MessageEmbed()
-                .setAuthor(`Playboy`, `${global.botPFP}`)
+                .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
                 .setTitle(message.mentions.users.first().username + " Is Now Muted")
                 .setColor("GREEN")
                 .addFields(
