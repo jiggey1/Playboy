@@ -9,7 +9,7 @@ module.exports = {
     run: async (client, message, args) => {
 
         function errorEmbed(errorMsg) {
-            const errEmbed = new MessageEmbed()``
+            const errEmbed = new MessageEmbed()
             .setAuthor("Playboy", `${global.botPFP}`)
             .setTitle("I Ran Into An Error!")
             .setColor("RED")
