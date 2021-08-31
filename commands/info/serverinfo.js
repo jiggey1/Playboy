@@ -24,7 +24,7 @@ module.exports = {
         try {
             let embed = new MessageEmbed()
             .setColor("#ab8ed1")
-            .setAuthor(`Atex`, `${global.botPFP}`, `${global.botInv}`)
+            .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
             .addField("Server Info", `${message.guild}'s Information`)
             .setThumbnail(serverlogo)
             .addField("Server Owner  :crown:", `The Server Owner Is: <@${message.guild.ownerId}>`)
