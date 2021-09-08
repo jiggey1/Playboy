@@ -24,7 +24,7 @@ module.exports = {
             message.client.commands.find(cmd => cmd.aliases && cmd.aliases.includes(commandName));
 
             if (!command) {
-                 return message.channel.send(`There is no command with name or alias \`${commandName}\`, ${message.author}!`);
+                return message.channel.send(`There is no command with name or alias \`${commandName}\`, ${message.author}!`);
             }
             delete require.cache[require.resolve(`../../commands/${commandCategory}/${command.name}.js`)];
         }

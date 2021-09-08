@@ -10,7 +10,7 @@ module.exports = {
            setTimeout(() => message.delete(), 50);
         }
     
-        if (message.author.id != '350692507199209494' || message.author.id != '301063072934526987') {
+        if (!message.author.id('350692507199209494') || message.author.id('301063072934526987')) {
             return message.channel.send("This command is only accessible to my owner, jiggey#4704. **__Please Don't Try To Use This. It's just embarrassing__**")
         }
 

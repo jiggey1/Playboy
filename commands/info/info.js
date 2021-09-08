@@ -18,8 +18,8 @@ module.exports = {
             { name: "Name", value: "Playboy", inline: true },
             { name: "Version", value: `${global.botVersion}`, inline: true },
             { name: "Developer", value: `${global.botDev}`, inline: true },
-            { name: "Servers", value: `${servsize}`, inline: true },
-            { name: "Members", value: `${usersize}`, inline: true },
+            //{ name: "Servers", value: `${servsize}`, inline: true },
+            //{ name: "Members", value: `${usersize}`, inline: true },
             { name: "Library", value: "Discord.JS", inline: true },
             { name: "Website", value: "Soon:tm:", inline: true },
             { name: "Playboy's Uptime", value: `${prettyMilliseconds(client.uptime)}` }
