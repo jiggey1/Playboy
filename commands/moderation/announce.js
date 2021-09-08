@@ -25,7 +25,7 @@ module.exports = {
 
         try {
             const announcementEmbed = new MessageEmbed()
-            .setAuthor(`Playboy`, `${global.botPFP}`, `${global.botInv}`)
+            .setAuthor(`${message.author.username}`, `${message.author}`)
             .setColor("ORANGE")
             .setTitle("Announcement From " + message.author.username)
             .setDescription(content)
