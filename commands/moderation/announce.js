@@ -25,15 +25,15 @@ module.exports = {
 
         try {
             const announcementEmbed = new MessageEmbed()
-            .setAuthor(`${message.author.username}`, `${message.author}`)
+            .setAuthor(`${message.author.username}`, `${message.author.displayAvatarURL()}`)
             .setColor("ORANGE")
-            .setTitle("Announcement From " + message.author.username)
+            .setTitle("Announcement!")
             .setDescription(content)
             .setFooter("Announcement Published: ")
             .setTimestamp()
 
-            message.channel.send({ embeds: [announcementEmbed] });
-            return message.channel.send("@everyone");
+            message.channel.send("@everyone");
+            return message.channel.send({ embeds: [announcementEmbed] });
 
         } catch(e) {
             console.log(e);
