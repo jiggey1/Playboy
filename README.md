@@ -1,6 +1,10 @@
 # [Playboy](https://discord.com/oauth2/authorize?client_id=879225491452739615&scope=bot&permissions=8)
 ### A Discord bot made for [The Playground](https://discord.gg/QE6TuanPNM)
 
+# NOTICE:
+### The most recent updates (starting on 9th Sept. 2021) are for TESTING purposes. This means the bot could cause errors if you just take code, without understanding or understanding other resources.
+##### This notice will be removed once the bot is stable. Please don't just steal Playboy. Either give credit, or keep your bot open-source to help me out. Thanks <3
+
 # Open-Sourced
 Playboy is open-sourced, and until the forseeable future, is staying that way.
 This repo is for people to see Playboy's progress, and to help beginners who havent quite graseped Discord.JS yet.
