@@ -1,6 +1,4 @@
 node_modules
 config.json
 json.sqlite
-package-lock.json
-package.json
-README.md
+tokens

@@ -1,4 +1,5 @@
 const { Permissions, MessageEmbed } = require('discord.js');
+const db = require('quick.db');
 
 module.exports = {
     name: "unmute",
@@ -36,7 +37,7 @@ module.exports = {
             return errorMessage("Please mention a user. Correct Usage: ``.unmute <@user>``");
         }
 
-        const role = message.guild.roles.cache.find(r => r.name === "Muted");
+        const role = db.get(`guild_${message.guild.id}_muteRoleName`) || message.guild.roles.cache.find(r => r.name === "Muted");
 
         if(!role) {
             return errorMessage("There is not a Muted role. Please make one and try again.")

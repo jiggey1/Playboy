@@ -22,7 +22,8 @@ module.exports = {
             //{ name: "Members", value: `${usersize}`, inline: true },
             { name: "Library", value: "Discord.JS", inline: true },
             { name: "Website", value: "Soon:tm:", inline: true },
-            { name: "Playboy's Uptime", value: `${prettyMilliseconds(client.uptime)}` }
+            { name: "Playboy's Uptime", value: `${prettyMilliseconds(client.uptime)}`, inline: true },
+            { name: "Playboy's Repo", value: "https://github.com/jiggey1/playboy", inline: true }
         )
 
         message.channel.send({ embeds: [infoEmbed] });

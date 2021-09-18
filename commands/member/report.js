@@ -1,4 +1,5 @@
 const { MessageEmbed } = require("discord.js");
+const db = require('quick.db')
 
 module.exports = {
     name: "report",
@@ -41,6 +42,12 @@ module.exports = {
             return errorEmbed(`You need to give a reason, you CANNOT leave this field blank.`);
         }
 
+        const logChannel = message.guild.channels.cache.find(c => c.name === "logs") || db.get(`guild_${message.guild.id}_logChannel`);
+
+        if(!logChannel) {
+            return message.channel.send("No logs channel found. The report failed to send. Please run ``.setup logChannel #channel-name``  ")
+        }
+
         message.channel.send(message.author.username + ", your report has been sent, thank you.")
         .then(msg => {
             setTimeout(() => msg.delete, 5000)
@@ -57,10 +64,8 @@ module.exports = {
         )
         .setFooter("Time Reported")
         .setTimestamp()
-        
-        const channel1 = client.channels.cache.get('880034130417561621');
 
-        channel1.send({ embeds: [reportEmbed] });
+        client.channels.cache.get(logChannel).send({ embeds: [reportEmbed] });
         
     }catch(e) {
         console.log(e);

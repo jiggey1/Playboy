@@ -1,4 +1,5 @@
 const { MessageEmbed, MessageFlags, Permissions } = require("discord.js")
+const db = require('quick.db')
 
 module.exports = {
     name: "announce",
@@ -23,11 +24,14 @@ module.exports = {
     
         const content = args.slice(0).join(" ");
 
+
+        const titleThing = db.get(`guild_${message.guild.id}_announceTitle`) || "New Announcement!";
+
         try {
             const announcementEmbed = new MessageEmbed()
             .setAuthor(`${message.author.username}`, `${message.author.displayAvatarURL()}`)
             .setColor("ORANGE")
-            .setTitle("Announcement!")
+            .setTitle(titleThing)
             .setDescription(content)
             .setFooter("Announcement Published: ")
             .setTimestamp()
