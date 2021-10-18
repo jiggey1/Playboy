@@ -1,6 +1,8 @@
 # [Playboy](https://discord.com/oauth2/authorize?client_id=879225491452739615&scope=bot&permissions=8)
 ### A Discord bot made for [The Playground](https://discord.gg/QE6TuanPNM)
 
+# Abandoned Project (May Be Revisited At Some Point)
+
 # NOTICE:
 ### The most recent updates (starting on 9th Sept. 2021) are for TESTING purposes. This means the bot could cause errors if you just take code, without understanding or understanding other resources.
 ##### This notice will be removed once the bot is stable. Please don't just steal Playboy. Either give credit, or keep your bot open-source to help me out. Thanks <3
